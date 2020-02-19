@@ -83,7 +83,7 @@ public abstract class ShadowBannerAdapter<T> extends RecyclerView.Adapter<Shadow
 
     abstract void onItemCreate(Context context, ViewHolder holder, T item, int position);
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         private SparseArray<View> mViews;
         private View mConvertView;
 
@@ -109,7 +109,7 @@ public abstract class ShadowBannerAdapter<T> extends RecyclerView.Adapter<Shadow
         }
     }
 
-    interface OnItemClickListener<E> {
+    public interface OnItemClickListener<E> {
         void onItemClick(E item, int position);
     }
 }
