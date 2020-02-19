@@ -120,6 +120,7 @@ public class MyBannerAdapter extends ShadowBannerAdapter<String> {
 
 ```
 MyBannerAdapter bannerAdapter = new MyBannerAdapter(你的list, 你创建的item的布局文件);
+
 myBanner.setBannerAdapter(bannerAdapter);
 ```
 
@@ -139,4 +140,4 @@ myBanner.setPointsColor(选中时的颜色，未选中时的颜色);
 myBanner.removePointRes();
 ```
 
-***更多功能可在使用中发现***
+*更多功能可在使用中发现*
