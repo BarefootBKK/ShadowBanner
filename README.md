@@ -1,10 +1,10 @@
 # ShadowBanner
 
-***年轻人的第一个 Android Banner***
+***年轻人的第一个 Android Banner.***
 
 ## 在项目中添加依赖
 
-#### build.gradle(project)
+#### build.gradle (project)
 
 ```
 allprojects {
@@ -15,7 +15,7 @@ allprojects {
 }
 ```
 
-#### build.gradle(app)
+#### build.gradle (app)
 
 ```
 implementation 'com.github.BarefootBKK:ShadowBanner:v1.0.0-beta.02'
@@ -36,7 +36,7 @@ implementation 'com.github.BarefootBKK:ShadowBanner:v1.0.0-beta.02'
 #### 在代码中（以Activity为例）
 ShadowBanner支持自定义banner item的布局，也可以使用默认布局
 
-以默认布局举例：
+**以默认布局举例：**
 
 ```
 public class MainActivity extends AppCompatActivity {
@@ -79,9 +79,9 @@ myBanner.setAutoScroll(true);
 
 ## 高级
 
-如果你不喜欢默认的布局，也可以使用自定义布局
+如果你不喜欢默认的布局，可以使用自定义布局
 
-**Step 1: 新建布局文件**
+**Step 1: 新建布局文件，如：**
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -138,3 +138,5 @@ myBanner.setPointsColor(选中时的颜色，未选中时的颜色);
 ```
 myBanner.removePointRes();
 ```
+
+***更多功能可在使用中发现***
