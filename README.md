@@ -2,7 +2,7 @@
 
 ***年轻人的第一个 Android Banner***
 
-### 在项目中添加依赖
+## 在项目中添加依赖
 
 #### build.gradle(project)
 
@@ -21,7 +21,7 @@ allprojects {
 implementation 'com.github.BarefootBKK:ShadowBanner:v1.0.0-beta.02'
 ```
 
-### 快速开始
+## 快速开始
 
 #### 在布局文件中添加
 
@@ -77,9 +77,11 @@ public class MainActivity extends AppCompatActivity {
 myBanner.setAutoScroll(true);
 ```
 
-### 高级
+## 高级
 
-**如果你不喜欢默认的布局，可以新建一个布局文件，如：**
+如果你不喜欢默认的布局，也可以使用自定义布局
+
+**Step 1: 新建布局文件**
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -95,7 +97,7 @@ myBanner.setAutoScroll(true);
 </LinearLayout>
 ```
 
-**接着实现自定义的BannerAdapter，如：**
+**Step 2: 实现自定义的BannerAdapter**
 
 ```
 public class MyBannerAdapter extends ShadowBannerAdapter<String> {
@@ -114,9 +116,25 @@ public class MyBannerAdapter extends ShadowBannerAdapter<String> {
 }
 ```
 
-**使用时将自定义的Adapter传入：**
+**Step 3: 使用时将自定义的Adapter传入**
 
 ```
 MyBannerAdapter bannerAdapter = new MyBannerAdapter(你的list, 你创建的item的布局文件);
 myBanner.setBannerAdapter(bannerAdapter);
+```
+
+#### 自定义小圆点样式
+
+如果你不喜欢默认的小圆点样式，可以使用：
+
+```
+myBanner.setPointRes(选中时的样式，未选中时的样式);
+```
+也可以设置颜色（未设置样式时才起作用）：
+```
+myBanner.setPointsColor(选中时的颜色，未选中时的颜色);
+```
+移除样式：
+```
+myBanner.removePointRes();
 ```
