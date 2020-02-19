@@ -71,7 +71,30 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-**如果要使用自动轮播**
+**设置Item点击Listener**
+
+```
+myBanner.setOnCellClickListener(new ShadowBannerAdapter.OnItemClickListener() {
+    @Override
+    public void onItemClick(Object item, int position) {
+        // 转换为自己的item类型
+        // ShadowBannerCell cellBanner = (ShadowBannerCell) item;
+    }
+});
+
+/**
+* 如果不想转换类型，也可以写成
+**/
+myBanner.setOnCellClickListener(new ShadowBannerAdapter.OnItemClickListener<item类型（如 ShadowBannerCell）>() {
+    @Override
+    public void onItemClick(item类型 item, int position) {
+        // ....
+    }
+});
+
+```
+
+**开启自动轮播**
 
 ```
 myBanner.setAutoScroll(true);
