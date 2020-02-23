@@ -24,8 +24,10 @@ public abstract class ShadowBannerAdapter<T> extends RecyclerView.Adapter<Shadow
      * cell list
      */
     private List<T> list;
-
-    private OnItemClickListener onItemClickListener;
+    /**
+     * item点击listener
+     */
+    private OnItemClickListener<T> onItemClickListener;
 
     /**
      * 最大循环Cell基数
@@ -71,7 +73,7 @@ public abstract class ShadowBannerAdapter<T> extends RecyclerView.Adapter<Shadow
         }
     }
 
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+    public void setOnItemClickListener(OnItemClickListener<T> onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
 

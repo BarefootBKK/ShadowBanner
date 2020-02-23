@@ -119,7 +119,7 @@ public final class ShadowBannerView extends ConstraintLayout {
     /**
      * 默认小圆点大小
      */
-    public final static int DEFAULT_POINT_SIZE = 40;
+    public final static int DEFAULT_POINT_SIZE = 30;
 
     /**
      * 构造函数1
