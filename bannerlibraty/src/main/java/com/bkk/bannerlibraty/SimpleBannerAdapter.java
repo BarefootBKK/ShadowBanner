@@ -17,7 +17,7 @@ public class SimpleBannerAdapter extends ShadowBannerAdapter<ShadowBannerCell> {
     }
 
     @Override
-    public void onItemCreate(Context context, ViewHolder holder, ShadowBannerCell item, int position) {
+    public void onItemCreate(ViewHolder holder, ShadowBannerCell item, int position) {
         cellInfo = CellViewGroup.getCurrentCellInfo();
         if (cellInfo != null) {
             TextView textTitle = holder.getView(cellInfo.titleId);
@@ -26,7 +26,7 @@ public class SimpleBannerAdapter extends ShadowBannerAdapter<ShadowBannerCell> {
             if (textTitle != null && textContent != null && imageView != null) {
                 textTitle.setText(item.getTitle());
                 textContent.setText(item.getContent());
-                Glide.with(context)
+                Glide.with(holder.getContext())
                         .load(item.getImageUrl())
                         .into(imageView);
             }

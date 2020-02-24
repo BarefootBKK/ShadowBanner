@@ -57,7 +57,7 @@ public abstract class ShadowBannerAdapter<T> extends RecyclerView.Adapter<Shadow
         if (getLogicItemCount() > 0) {
             int logicPos = position % getLogicItemCount();
             final T item = list.get(logicPos);
-            onItemCreate(holder.itemView.getContext(), holder, item, logicPos);
+            onItemCreate(holder, item, logicPos);
             /**
              * 设置点击监听器
              */
@@ -102,7 +102,7 @@ public abstract class ShadowBannerAdapter<T> extends RecyclerView.Adapter<Shadow
         return currentItem;
     }
 
-    public abstract void onItemCreate(Context context, ViewHolder holder, T item, int position);
+    public abstract void onItemCreate(ViewHolder holder, T item, int position);
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private SparseArray<View> mViews;
@@ -132,6 +132,10 @@ public abstract class ShadowBannerAdapter<T> extends RecyclerView.Adapter<Shadow
                 mViews.put(viewId, view);
             }
             return (T) view;
+        }
+
+        public Context getContext() {
+            return mConvertView.getContext();
         }
     }
 
