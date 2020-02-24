@@ -135,6 +135,10 @@ public abstract class ShadowBannerAdapter<T> extends RecyclerView.Adapter<Shadow
         }
     }
 
+    /**
+     * Item/Cell 点击监听器
+     * @param <E>
+     */
     public interface OnItemClickListener<E> {
         void onItemClick(E item, int position);
     }
