@@ -18,7 +18,7 @@ allprojects {
 #### build.gradle (app)
 
 ```
-implementation 'com.github.BarefootBKK:ShadowBanner:v1.0.0-beta.02'
+implementation 'com.github.BarefootBKK:ShadowBanner:1.0.0'
 ```
 
 ## 快速开始
@@ -82,9 +82,7 @@ myBanner.setOnCellClickListener(new ShadowBannerAdapter.OnItemClickListener() {
     }
 });
 
-/**
-* 如果不想转换类型，也可以写成
-**/
+// 如果不想转换类型，也可以写成
 myBanner.setOnCellClickListener(new ShadowBannerAdapter.OnItemClickListener<item类型（如 ShadowBannerCell）>() {
     @Override
     public void onItemClick(item类型 item, int position) {
