@@ -36,7 +36,8 @@ public class CellViewGroup {
         // 创建图片View
         ImageView imageView = new ImageView(context);
         imageView.setId(View.generateViewId());
-        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        imageView.setAdjustViewBounds(true);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         imageView.setBackgroundColor(Color.WHITE);
         imageView.setLayoutParams(new ViewGroup.LayoutParams(MATCH_PARENT, MATCH_PARENT));
         // 创建内容Text
