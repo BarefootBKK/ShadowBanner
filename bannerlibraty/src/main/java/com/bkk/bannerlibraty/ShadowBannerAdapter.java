@@ -59,9 +59,7 @@ public abstract class ShadowBannerAdapter<T> extends RecyclerView.Adapter<Shadow
             int logicPos = position % getLogicItemCount();
             final T item = list.get(logicPos);
             onItemCreate(holder, item, logicPos);
-            /**
-             * 设置点击监听器
-             */
+            // 设置点击监听器
             if (onItemClickListener != null) {
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
