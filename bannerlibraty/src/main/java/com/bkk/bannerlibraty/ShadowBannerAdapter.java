@@ -48,7 +48,8 @@ public abstract class ShadowBannerAdapter<T> extends RecyclerView.Adapter<Shadow
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return ViewHolder.getInstance(parent, layout, isSetLayoutRes);
+        ViewHolder viewHolder = ViewHolder.getInstance(parent, layout, isSetLayoutRes);
+        return viewHolder;
     }
 
     @SuppressWarnings("unchecked")
