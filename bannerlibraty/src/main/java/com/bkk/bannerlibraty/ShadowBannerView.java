@@ -97,10 +97,6 @@ public final class ShadowBannerView extends ConstraintLayout {
      */
     private int pointSize;
     /**
-     * 圆点容器背景
-     */
-    private int pointsContainerBackgroundColor;
-    /**
      * 圆点间距
      */
     private int pointMargin;
@@ -262,15 +258,7 @@ public final class ShadowBannerView extends ConstraintLayout {
      * @param color 颜色
      */
     public void setPointsContainerBackgroundColor(int color) {
-        this.pointsContainerBackgroundColor = color;
-    }
-
-    /**
-     * 获取当前圆点容器背景颜色
-     * @return pointsContainerBackgroundColor
-     */
-    public int getPointsContainerBackgroundColor() {
-        return pointsContainerBackgroundColor;
+        bottomPointsLayout.setBackgroundColor(color);
     }
 
     /**
@@ -287,7 +275,6 @@ public final class ShadowBannerView extends ConstraintLayout {
         this.pointMargin = DEFAULT_POINT_MARGIN;
         this.pointBackgroundSelected = Color.WHITE;
         this.pointBackgroundUnSelected = Color.GRAY;
-        this.pointsContainerBackgroundColor = Color.BLACK;
     }
 
     /**
@@ -321,7 +308,7 @@ public final class ShadowBannerView extends ConstraintLayout {
          */
         bottomPointsLayout = new ConstraintLayout(mContext);
         bottomPointsLayout.setId(View.generateViewId());
-        bottomPointsLayout.setBackgroundColor(pointsContainerBackgroundColor);
+        bottomPointsLayout.setBackgroundColor(Color.BLACK);
         bottomPointsLayout.addView(pointsContainer);
         c.applyTo(bottomPointsLayout);
         c.constrainHeight(bottomPointsLayout.getId(), ConstraintSet.WRAP_CONTENT);
