@@ -309,6 +309,14 @@ public final class ShadowBannerView extends ConstraintLayout {
     }
 
     /**
+     * 设置圆点容器背景颜色
+     * @param color 颜色
+     */
+    public void setPointsContainerBackgroundColor(int color) {
+        bottomPointsLayout.setBackgroundColor(color);
+    }
+
+    /**
      * 初始化
      */
     private void init() {
@@ -353,7 +361,7 @@ public final class ShadowBannerView extends ConstraintLayout {
         // 构建小圆点外容器2
         bottomPointsLayout = new ConstraintLayout(mContext);
         bottomPointsLayout.setId(View.generateViewId());
-        bottomPointsLayout.setBackgroundColor(Color.parseColor("#000000"));
+        bottomPointsLayout.setBackgroundColor(Color.WHITE);
         bottomPointsLayout.addView(pointsContainer);
         c.applyTo(bottomPointsLayout);
         c.constrainHeight(bottomPointsLayout.getId(), ConstraintSet.WRAP_CONTENT);
