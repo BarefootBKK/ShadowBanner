@@ -101,6 +101,11 @@ public abstract class ShadowBannerAdapter<T> extends RecyclerView.Adapter<Shadow
         return currentItem;
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+
     public abstract void onItemCreate(ViewHolder holder, T item, int position);
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

@@ -382,9 +382,9 @@ public final class ShadowBannerView extends ConstraintLayout {
 
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                currentTimeCount = 0;
                 // previousPos != position ：节约系统性能，防止多次执行浪费系统资源
                 if (previousPos != position && pointViews.size() == itemCount) {
-                    currentTimeCount = 0;
                     setPointBackground(lastImagePoint, pointBackgroundUnSelected);
                     lastImagePoint = pointViews.get(position % itemCount);
                     setPointBackground(lastImagePoint, pointBackgroundSelected);
@@ -448,13 +448,14 @@ public final class ShadowBannerView extends ConstraintLayout {
                 @Override
                 public void run() {
                     try {
+                        int currentItem;
                         while (isAutoScroll) {
                             Thread.sleep(sleepTime);
                             if (!isOnDrag) {
                                 currentTimeCount += sleepTime;
                                 if (currentTimeCount >= scrollTime) {
                                     currentTimeCount = 0;
-                                    int currentItem = pager.getCurrentItem();
+                                    currentItem = pager.getCurrentItem();
                                     if (currentItem < bannerAdapter.getItemCount() - 1) {
                                         currentItem++;
                                     } else {
