@@ -18,7 +18,7 @@ allprojects {
 #### build.gradle (app)
 
 ```
-implementation 'com.github.BarefootBKK:ShadowBanner:1.0.0'
+implementation 'com.github.BarefootBKK:ShadowBanner:1.1.0'
 ```
 
 ## 快速开始
@@ -81,15 +81,6 @@ myBanner.setOnCellClickListener(new ShadowBannerAdapter.OnItemClickListener() {
         // ShadowBannerCell cellBanner = (ShadowBannerCell) item;
     }
 });
-
-// 如果不想转换类型，也可以写成
-myBanner.setOnCellClickListener(new ShadowBannerAdapter.OnItemClickListener<item类型（如 ShadowBannerCell）>() {
-    @Override
-    public void onItemClick(item类型 item, int position) {
-        // ....
-    }
-});
-
 ```
 
 **开启自动轮播**
@@ -128,9 +119,9 @@ public class MyBannerAdapter extends ShadowBannerAdapter<String> {
     }
 
     @Override
-    public void onItemCreate(Context context, ViewHolder holder, String item, int position) {
+    public void onItemCreate(ViewHolder holder, String item, int position) {
         ImageView imageView = holder.getView(R.id.bannerImage);
-        Glide.with(context)
+        Glide.with(holder.getContext())
                 .load(item)
                 .into(imageView);
     }
