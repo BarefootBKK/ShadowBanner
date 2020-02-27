@@ -119,7 +119,7 @@ public class MyBannerAdapter extends ShadowBannerAdapter<String> {
     }
 
     @Override
-    public void onItemCreate(ViewHolder holder, BannerItem item, int position) {
+    public void onItemCreate(ViewHolder holder, String item, int position) {
         ImageView imageView = holder.getView(R.id.bannerImage);
         Glide.with(holder.getContext())
                 .load(item)
