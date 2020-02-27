@@ -81,15 +81,6 @@ myBanner.setOnCellClickListener(new ShadowBannerAdapter.OnItemClickListener() {
         // ShadowBannerCell cellBanner = (ShadowBannerCell) item;
     }
 });
-
-// 如果不想转换类型，也可以写成
-myBanner.setOnCellClickListener(new ShadowBannerAdapter.OnItemClickListener<item类型（如 ShadowBannerCell）>() {
-    @Override
-    public void onItemClick(item类型 item, int position) {
-        // ....
-    }
-});
-
 ```
 
 **开启自动轮播**
