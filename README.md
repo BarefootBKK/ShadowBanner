@@ -18,7 +18,7 @@ allprojects {
 #### build.gradle (app)
 
 ```
-implementation 'com.github.BarefootBKK:ShadowBanner:1.0.0'
+implementation 'com.github.BarefootBKK:ShadowBanner:1.1.0'
 ```
 
 ## 快速开始
