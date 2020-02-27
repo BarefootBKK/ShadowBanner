@@ -24,7 +24,6 @@ import androidx.viewpager2.widget.ViewPager2;
  * @author BarefootBKK
  */
 public final class ShadowBannerView extends ConstraintLayout {
-
     /**
      * Context
      */
@@ -146,8 +145,7 @@ public final class ShadowBannerView extends ConstraintLayout {
 
     /**
      * 构造函数1
-     *
-     * @param context
+     * @param context Context
      */
     public ShadowBannerView(Context context) {
         this(context, null);
@@ -155,9 +153,8 @@ public final class ShadowBannerView extends ConstraintLayout {
 
     /**
      * 构造函数2
-     *
-     * @param context
-     * @param attrs
+     * @param context 略
+     * @param attrs 略
      */
     public ShadowBannerView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -165,10 +162,9 @@ public final class ShadowBannerView extends ConstraintLayout {
 
     /**
      * 构造函数3
-     *
-     * @param context
-     * @param attrs
-     * @param defStyleAttr
+     * @param context 略
+     * @param attrs 略
+     * @param defStyleAttr 略
      */
     public ShadowBannerView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
@@ -178,8 +174,7 @@ public final class ShadowBannerView extends ConstraintLayout {
 
     /**
      * 设置Banner Cell的点击监听器
-     *
-     * @param itemClickListener
+     * @param itemClickListener item点击监听器
      */
     public void setOnCellClickListener(ShadowBannerAdapter.OnItemClickListener itemClickListener) {
         if (bannerAdapter != null) {
@@ -189,8 +184,7 @@ public final class ShadowBannerView extends ConstraintLayout {
 
     /**
      * 设置Banner适配器
-     *
-     * @param bannerAdapter
+     * @param bannerAdapter 适配器参数
      */
     public void setBannerAdapter(ShadowBannerAdapter bannerAdapter) {
         this.bannerAdapter = bannerAdapter;
@@ -199,8 +193,7 @@ public final class ShadowBannerView extends ConstraintLayout {
 
     /**
      * 设置小圆点大小
-     *
-     * @param pointSize
+     * @param pointSize 圆点大小
      */
     public void setPointSize(int pointSize) {
         this.pointSize = pointSize;
@@ -208,8 +201,7 @@ public final class ShadowBannerView extends ConstraintLayout {
 
     /**
      * 设置小圆点间隔
-     *
-     * @param pointMargin
+     * @param pointMargin 圆点左右间距
      */
     public void setPointMargin(int pointMargin) {
         this.pointMargin = pointMargin;
@@ -217,8 +209,7 @@ public final class ShadowBannerView extends ConstraintLayout {
 
     /**
      * 设置自动轮播间隔时间
-     *
-     * @param scrollTime
+     * @param scrollTime 轮播间隔
      */
     public void setAutoScrollTime(long scrollTime) {
         this.scrollTime = scrollTime > MIN_SCROLL_TIME ? scrollTime : MIN_SCROLL_TIME;
@@ -226,7 +217,6 @@ public final class ShadowBannerView extends ConstraintLayout {
 
     /**
      * 设置是否自动轮播
-     *
      * @param scroll 是否自动轮播
      */
     public void setAutoScroll(boolean scroll) {
@@ -235,8 +225,7 @@ public final class ShadowBannerView extends ConstraintLayout {
 
     /**
      * 设置选中的圆点颜色
-     *
-     * @param pointColorSelected
+     * @param pointColorSelected 选中的圆点
      */
     public void setPointColorSelected(int pointColorSelected) {
         this.pointBackgroundSelected = pointColorSelected;
@@ -244,8 +233,7 @@ public final class ShadowBannerView extends ConstraintLayout {
 
     /**
      * 设置未选中的圆点颜色
-     *
-     * @param pointColorUnSelected
+     * @param pointColorUnSelected 未选中的圆点
      */
     public void setPointColorUnSelected(int pointColorUnSelected) {
         this.pointBackgroundUnSelected = pointColorUnSelected;
@@ -253,9 +241,8 @@ public final class ShadowBannerView extends ConstraintLayout {
 
     /**
      * 设置圆点颜色
-     *
-     * @param pointColorSelected
-     * @param pointColorUnSelected
+     * @param pointColorSelected 选中的
+     * @param pointColorUnSelected 未选中的
      */
     public void setPointsColor(int pointColorSelected, int pointColorUnSelected) {
         setPointColorSelected(pointColorSelected);
@@ -264,9 +251,8 @@ public final class ShadowBannerView extends ConstraintLayout {
 
     /**
      * 设置圆点图片样式
-     *
-     * @param pointResSelected
-     * @param pointColorUnSelected
+     * @param pointResSelected 选中的
+     * @param pointColorUnSelected 未选中的
      */
     public void setPointRes(int pointResSelected, int pointColorUnSelected) {
         this.pointBackgroundSelected = pointResSelected;
@@ -283,8 +269,7 @@ public final class ShadowBannerView extends ConstraintLayout {
 
     /**
      * 获取Banner Cell个数
-     *
-     * @return
+     * @return itemCount
      */
     public int getItemCount() {
         return itemCount;
@@ -292,7 +277,6 @@ public final class ShadowBannerView extends ConstraintLayout {
 
     /**
      * 设置自动切换时的duration
-     *
      * @param duration 动画时长
      */
     public void setAutoScrollDuration(long duration) {
@@ -301,7 +285,6 @@ public final class ShadowBannerView extends ConstraintLayout {
 
     /**
      * 设置点击切换时的duration
-     *
      * @param duration 动画时长
      */
     public void setClickScrollDuration(int duration) {
@@ -347,7 +330,7 @@ public final class ShadowBannerView extends ConstraintLayout {
     private void constructViews() {
         ConstraintSet c = new ConstraintSet();
 
-        // 构建小圆点内容器1
+        // 构建小圆点内容器
         pointsContainer = new LinearLayout(mContext);
         pointsContainer.setId(View.generateViewId());
         pointsContainer.setOrientation(LinearLayout.HORIZONTAL);
@@ -358,10 +341,10 @@ public final class ShadowBannerView extends ConstraintLayout {
         c.connect(pointsContainer.getId(), ConstraintSet.LEFT, ConstraintSet.PARENT_ID, ConstraintSet.LEFT);
         c.connect(pointsContainer.getId(), ConstraintSet.RIGHT, ConstraintSet.PARENT_ID, ConstraintSet.RIGHT);
 
-        // 构建小圆点外容器2
+        // 底部容器
         bottomPointsLayout = new ConstraintLayout(mContext);
         bottomPointsLayout.setId(View.generateViewId());
-        bottomPointsLayout.setBackgroundColor(Color.WHITE);
+        bottomPointsLayout.setBackgroundColor(Color.parseColor("#000000"));
         bottomPointsLayout.addView(pointsContainer);
         c.applyTo(bottomPointsLayout);
         c.constrainHeight(bottomPointsLayout.getId(), ConstraintSet.WRAP_CONTENT);
@@ -394,18 +377,14 @@ public final class ShadowBannerView extends ConstraintLayout {
         pager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageScrollStateChanged(int state) {
-                if (state == 1) {
-                    currentTimeCount = 0;
-                    isOnDrag = true;
-                } else {
-                    isOnDrag = false;
-                }
+                isOnDrag = (state == 1);
             }
 
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 // previousPos != position ：节约系统性能，防止多次执行浪费系统资源
                 if (previousPos != position && pointViews.size() == itemCount) {
+                    currentTimeCount = 0;
                     setPointBackground(lastImagePoint, pointBackgroundUnSelected);
                     lastImagePoint = pointViews.get(position % itemCount);
                     setPointBackground(lastImagePoint, pointBackgroundSelected);
@@ -434,7 +413,6 @@ public final class ShadowBannerView extends ConstraintLayout {
                     int currentItem = pager.getCurrentItem();
                     int offsetItem = imagePosition - currentItem % itemCount;
                     MyPagerHelper.setCurrentItem(pager, currentItem + offsetItem, clickScrollDuration);
-                    currentTimeCount = 0;
                 }
             });
             pointsContainer.addView(imageView);
@@ -448,18 +426,15 @@ public final class ShadowBannerView extends ConstraintLayout {
 
     /**
      * 设置小圆点背景
-     *
-     * @param point
-     * @param value
-     * @return
+     * @param point 圆点
+     * @param value 资源或颜色
      */
-    private ImageView setPointBackground(ImageView point, int value) {
+    private void setPointBackground(ImageView point, int value) {
         if (isResSet) {
             point.setBackgroundResource(value);
         } else {
             point.setBackgroundColor(value);
         }
-        return point;
     }
 
     /**
@@ -524,15 +499,15 @@ public final class ShadowBannerView extends ConstraintLayout {
         private static int previousValue;
 
         /**
-         * 设置当前Item
-         * @param pager    viewpager2
-         * @param item     下一个跳转的item
+         *  设置当前Item
+         * @param pager viewpager2
+         * @param item 下一个跳转的item
          * @param duration scroll时长
          */
         static void setCurrentItem(final ViewPager2 pager, int item, long duration) {
             previousValue = 0;
             int currentItem = pager.getCurrentItem();
-            int pagePxWidth = pager.getWidth();
+            int pagePxWidth  = pager.getWidth();
             int pxToDrag = pagePxWidth * (item - currentItem);
             final ValueAnimator animator = ValueAnimator.ofInt(0, pxToDrag);
             animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -556,10 +531,14 @@ public final class ShadowBannerView extends ConstraintLayout {
                 }
 
                 @Override
-                public void onAnimationCancel(Animator animation) { }
+                public void onAnimationCancel(Animator animation) {
+
+                }
 
                 @Override
-                public void onAnimationRepeat(Animator animation) { }
+                public void onAnimationRepeat(Animator animation) {
+
+                }
             });
             animator.setInterpolator(new AccelerateDecelerateInterpolator());
             animator.setDuration(duration);
