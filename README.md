@@ -1,8 +1,6 @@
 # ShadowBanner
 [![](https://jitpack.io/v/BarefootBKK/ShadowBanner.svg)](https://jitpack.io/#BarefootBKK/ShadowBanner)
 
-***年轻人的第一个 Android Banner.***
-
 ## 在项目中添加依赖
 
 #### build.gradle (project)
