@@ -1,4 +1,5 @@
 # ShadowBanner
+[![](https://jitpack.io/v/BarefootBKK/ShadowBanner.svg)](https://jitpack.io/#BarefootBKK/ShadowBanner)
 
 ***年轻人的第一个 Android Banner.***
 
